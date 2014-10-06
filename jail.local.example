@@ -1,0 +1,19 @@
+[DEFAULT]
+
+hipchat_token = put_your_hipchat_token_here
+hipchat_room  = put_your_default_hipchat_roomname_or_id_for_fail2ban_notifications
+hipchat_from  = Fail2Ban
+
+
+action_hipchat = %(banaction)s[name=%(__name__)s, port="%(port)s", protocol="%(protocol)s", chain="%(chain)s"]
+                 hipchat[name=%(__name__)s, hipchat_room="%(hipchat_room)s", hipchat_token="%(hipchat_token)s", hipchat_from="%(hipchat_from)s"]
+
+
+[ssh]
+
+enabled  = true
+port     = ssh
+filter   = sshd
+action   = %(action_hipchat)s
+logpath  = /var/log/auth.log
+maxretry = 5
