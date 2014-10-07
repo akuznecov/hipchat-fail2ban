@@ -19,9 +19,9 @@ Fail2Ban action to send notifications to [HipChat](https://www.hipchat.com)
 
 * Fill global values of `hipchat_token` and `hipchat_room` (also you may override them per jail)
 
-* Set `action   = %(action_hipchat)s` for your jail (if you haven't copied `jail.local` completely)
+* Set `action   = %(action_hipchat)s` for your jail (if you haven't copied `jail.local` completely) or by default
  
-* Set proper logpath depending on your repository
+* Set proper `logpath` depending on your distribution
 
 * Customize everything on your wish ;-)
 
